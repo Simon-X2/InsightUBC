@@ -16,7 +16,6 @@ import {
 	SCOMPARISON,
 	TransformationOptions, SortTypes, DirectionObject
 } from "./QueryInterfaces";
-import * as regexpp from "regexpp";
 import {RoomQueryMethods} from "./RoomQueryMethods";
 import Room from "./Room";
 import {WildcardsMethods} from "./WildcardsMethods"; // add {} if Section is an interface
@@ -208,9 +207,9 @@ export class QueryMethods {
 			throw new InsightError("MathComp: trying to use string in math comparison");
 		}
 		if (MComp === "GT") {
-			bool = course[mfield] > compValue;
+			bool = (course[mfield] as number) > compValue;
 		} else if (MComp === "LT") {
-			bool = course[mfield] < compValue;
+			bool = (course[mfield] as number) < compValue;
 		} else if (MComp === "EQ") {
 			bool = course[mfield] === compValue;
 		}

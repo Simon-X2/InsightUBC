@@ -334,7 +334,7 @@ function turnIntoSections(data: any): any[] {
 }
 
 // check that any given id meets the specification
-function checkValidID(id: string): boolean {
+export function checkValidID(id: string): boolean {
 	const isWhitespaceString = !id.replace(/\s/g, "").length;
 	return !id.includes("_") && id !== "" && !isWhitespaceString;
 }
